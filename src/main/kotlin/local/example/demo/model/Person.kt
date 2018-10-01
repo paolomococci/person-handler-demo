@@ -29,4 +29,28 @@ class Person() {
     var name: String? = null
     var surname: String? = null
     var age: Int? = null
+
+    constructor(
+            name: String
+    ) : this() {
+        this.name = name
+    }
+
+    constructor(
+            name: String,
+            surname: String
+    ) : this() {
+        this.name = name
+        this.surname = surname
+    }
+
+    constructor(
+            name: String,
+            surname: String,
+            age: Int
+    ) : this() {
+        this.name = name
+        this.surname = surname
+        this.age = age
+    }
 }
