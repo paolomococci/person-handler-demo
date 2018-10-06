@@ -18,12 +18,28 @@
 
 package local.example.demo.controller
 
+import local.example.demo.assembler.PersonResourceAssembler
+import local.example.demo.model.Person
+import local.example.demo.repository.PersonRepository
+import org.springframework.hateoas.Resource
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import java.net.URI
 import java.net.URISyntaxException
 
 @RestController
 @RequestMapping("/api/persons")
-class PersonRestController {
+class PersonRestController(
+        private val personRepository: PersonRepository,
+        private val personResourceAssembler: PersonResourceAssembler
+) {
+
+    @PostMapping
+    @Throws(URISyntaxException::class)
+    internal fun create(@RequestBody person: Person): ResponseEntity<Resource<Person>> {
+        val resource = personResourceAssembler.toResource(personRepository.save(person))
+        return ResponseEntity.created(URI(resource.id.expand().href)).body(resource)
+    }
 
     @GetMapping("/{id}")
     @Throws(URISyntaxException::class)
