@@ -105,7 +105,7 @@ class PersonRestController(
 
     @DeleteMapping("/{id}")
     @Throws(URISyntaxException::class)
-    internal fun cancel(@PathVariable id: Long?): ResponseEntity<*> {
+    internal fun delete(@PathVariable id: Long?): ResponseEntity<*> {
         if (id != null) personRepository.deleteById(id)
         return ResponseEntity.noContent().build<Any>()
     }
