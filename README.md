@@ -1,6 +1,9 @@
 # person-handler-demo
 Hibernate ORM and Spring Boot demo in the Kotlin programming language
 
+Attention, the data used in the test files are fanciful.
+Inventions that do not correspond to any place, object or real person.
+Thank you.
 ## Example of use
 
 ### I get sample items
