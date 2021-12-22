@@ -1,4 +1,5 @@
 # person-handler-demo
+
 Hibernate ORM and Spring Boot demo in the Kotlin programming language
 
 Attention, the data used in the test files are fanciful.
@@ -7,7 +8,8 @@ Thank you.
 ## Example of use
 
 ### I get sample items
-```
+
+```shell
 $ curl -v -i http://127.0.0.1:9090/api/persons
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -125,7 +127,8 @@ Date: Mon, 08 Oct 2018 03:53:31 GMT
 ```
 
 ### I create a new item
-```
+
+```shell
 $ curl -v -i -H "Content-Type:application/json" -d "{\"name\":\"Paul\",\"surname\":\"Bender\",\"age\":\"37\"}" http://127.0.0.1:9090/api/persons
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -204,7 +207,8 @@ Date: Mon, 08 Oct 2018 03:54:12 GMT
 ```
 
 ### I ask once again a list of people
-```
+
+```shell
 $ curl -v -i http://127.0.0.1:9090/api/persons
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -334,7 +338,8 @@ Date: Mon, 08 Oct 2018 03:54:25 GMT
 ```
 
 ### I update the last item
-```
+
+```shell
 $ curl -v -i -X PUT -H "Content-Type:application/json" -d "{\"name\":\"Peter\",\"surname\":\"Bender\",\"age\":\"27\"}" http://127.0.0.1:9090/api/persons/8
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -376,7 +381,8 @@ Date: Mon, 08 Oct 2018 03:54:40 GMT
 ```
 
 ### I partial update the last item
-```
+
+```shell
 $ curl -v -i -X PATCH -H "Content-Type:application/json" -d "{\"age\":\"27\"}" http://127.0.0.1:9090/api/persons/8
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -418,7 +424,8 @@ Date: Mon, 08 Oct 2018 03:54:53 GMT
 ```
 
 ### I try to request a list of items with age equal to 27
-```
+
+```shell
 $ curl -v -i http://127.0.0.1:9090/api/persons/age/27
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -464,7 +471,8 @@ Date: Mon, 08 Oct 2018 03:55:09 GMT
 ```
 
 ### I try to request a list of items with name equal to Peter
-```
+
+```shell
 $ curl -v -i http://127.0.0.1:9090/api/persons/name/Peter
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -510,7 +518,8 @@ Date: Mon, 08 Oct 2018 03:55:20 GMT
 ```
 
 ### I try to request a list of items with surname equal to Bender
-```
+
+```shell
 $ curl -v -i http://127.0.0.1:9090/api/persons/surname/Bender
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -568,7 +577,8 @@ Date: Mon, 08 Oct 2018 03:55:31 GMT
 ```
 
 ### I delete the latest item
-```
+
+```shell
 $ curl -v -i -X DELETE http://127.0.0.1:9090/api/persons/8
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -588,7 +598,8 @@ Date: Mon, 08 Oct 2018 03:55:50 GMT
 ```
 
 ### I try to request the last item on the list just deleted
-```
+
+```shell
 $ curl -v -i http://127.0.0.1:9090/api/persons/8
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -613,7 +624,8 @@ could not find person id: 8
 ```
 
 ### I again get a list of items with name equal to Bender
-```
+
+```shell
 $ curl -v -i http://127.0.0.1:9090/api/persons/surname/Bender
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
